@@ -12,7 +12,6 @@ import jp.co.internous.sampleweb.model.mapper.MstProductMapper;
 import jp.co.internous.sampleweb.model.session.LoginSession;
 import jp.co.internous.sampleweb.model.domain.MstCategory;
 import jp.co.internous.sampleweb.model.domain.MstProduct;
-import jp.co.internous.sampleweb.model.form.SearchForm;
 
 @Controller
 @RequestMapping("/sampleweb")
