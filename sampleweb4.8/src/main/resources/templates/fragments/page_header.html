@@ -72,8 +72,6 @@
 			$('button#login').addClass('hidden');
 			$('button#logout').removeClass('hidden');
 		}
-
-		$('#mypageMenu').removeClass('hidden');
 		
 		$('div.loginArea input[name=userName]').val('');
 		$('div.loginArea input[name=password]').val('');
@@ -85,9 +83,6 @@
 			$('button#logout').addClass('hidden');
 			$('button#login').removeClass('hidden');
 		}
-		if (isEmpty($('#mypageMenu').prop('class'))) {
-			$('#mypageMenu').addClass('hidden');
-		}
 		
 		$('div.loginArea input[name=userName]').val('');
 		$('div.loginArea input[name=password]').val('');
@@ -96,11 +91,6 @@
 	</script>
 	<div class="headerTop">
 		<h1 class="logo"><a href="/sampleweb/">Florist YU</a></h1>
-		<span class="signup">
-			<a href="/sampleweb/user/" th:href="@{/sampleweb/user/}">
-			新規ユーザ登録はこちら
-			</a>
-		</span>
 		<span class="welcomeMsg"
 			th:text="'ようこそ！ ' + ${loginSession == null || loginSession.getUserName() == null ? 'ゲスト さん' : loginSession.getUserName() + ' さん'}"></span>
 	</div>
@@ -115,10 +105,6 @@
 		</div>
 		<ul class="menu">
 			<li id="cartMenu"><a href="/sampleweb/cart/">カート</a></li>
-			<li id="mypageMenu"
-					th:class="${loginSession == null || loginSession.getUserName() == null ? 'hidden' : ''}">
-				<a href="/sampleweb/mypage/">マイページ</a>
-			</li>
 		</ul>
 	</nav>
 	<!-- Modal Dialog (ログインエラー) -->

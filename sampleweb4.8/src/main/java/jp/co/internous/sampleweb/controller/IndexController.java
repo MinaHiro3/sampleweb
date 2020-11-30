@@ -7,17 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.internous.sampleweb.model.mapper.MstCategoryMapper;
 import jp.co.internous.sampleweb.model.mapper.MstProductMapper;
 import jp.co.internous.sampleweb.model.session.LoginSession;
-import jp.co.internous.sampleweb.model.domain.MstCategory;
 import jp.co.internous.sampleweb.model.domain.MstProduct;
 
 @Controller
 @RequestMapping("/sampleweb")
 public class IndexController {
-	@Autowired
-	private MstCategoryMapper categoryMapper;
 
 	@Autowired
 	private MstProductMapper productMapper;
@@ -37,14 +33,9 @@ public class IndexController {
 			loginSession.setTmpUserId(tmpUserId);
 		}
 		
-		// カテゴリを取得
-		List<MstCategory> categories = categoryMapper.find();	
-		
 		// 商品情報を取得
 		List<MstProduct> products = productMapper.find();
 		
-		m.addAttribute("categories", categories);
-		m.addAttribute("selected", 0);
 		m.addAttribute("products", products);
 		m.addAttribute("loginSession",loginSession);
 		return "index";

@@ -2,18 +2,19 @@ package jp.co.internous.sampleweb.model.domain;
 
 import java.sql.Timestamp;
 
-public class MstUser {
-	
+
+public class MstDestination {
 	private int id;
-	private String userName;
-	private String password;
+	private int userId;
 	private String familyName;
 	private String firstName;
-	private String familyNameKana;
-	private String firstNameKana;
-	private int gender;
+	private String telNumber;
+	private String address;
+	private int status;
 	private Timestamp createdAt;
 	private Timestamp updatedAt;
+	
+	public MstDestination () {}
 	
 	public int getId() {
 		return id;
@@ -21,17 +22,11 @@ public class MstUser {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUserName() {
-		return userName;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getFamilyName() {
 		return familyName;
@@ -45,23 +40,23 @@ public class MstUser {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	public String getFamilyNameKana() {
-		return familyNameKana;
+	public String getTelNumber() {
+		return telNumber;
 	}
-	public void setFamilyNameKana(String familyNameKana) {
-		this.familyNameKana = familyNameKana;
+	public void setTelNumber(String telNumber) {
+		this.telNumber = telNumber;
 	}
-	public String getFirstNameKana() {
-		return firstNameKana;
+	public String getAddress() {
+		return address;
 	}
-	public void setFirstNameKana(String firstNameKana) {
-		this.firstNameKana = firstNameKana;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public int getGender() {
-		return gender;
+	public int getStatus() {
+		return status;
 	}
-	public void setGender(int gender) {
-		this.gender = gender;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	public Timestamp getCreatedAt() {
 		return createdAt;

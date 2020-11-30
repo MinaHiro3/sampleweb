@@ -1,6 +1,7 @@
 package jp.co.internous.sampleweb.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
-
+import jp.co.internous.sampleweb.model.domain.MstDestination;
+import jp.co.internous.sampleweb.model.mapper.MstDestinationMapper;
 import jp.co.internous.sampleweb.model.mapper.TblCartMapper;
 import jp.co.internous.sampleweb.model.mapper.TblPurchaseHistoryMapper;
 import jp.co.internous.sampleweb.model.session.LoginSession;
@@ -21,7 +23,8 @@ import jp.co.internous.sampleweb.model.session.LoginSession;
 @RequestMapping("/sampleweb/settlement")
 public class SettlementController {
 	
-	
+	@Autowired
+	private MstDestinationMapper destinationMapper;
 	
 	@Autowired
 	private LoginSession loginSession;
@@ -36,10 +39,10 @@ public class SettlementController {
 	
 	@RequestMapping("/")
 	public String index(Model m) {
+		int userId = loginSession.getUserId();
 		
-		
-		
-
+		List<MstDestination> destinations = destinationMapper.findByUserId(userId);
+		m.addAttribute("destinations", destinations);
 		m.addAttribute("loginSession",loginSession);
 		
 		return "settlement";

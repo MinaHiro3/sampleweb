@@ -34,10 +34,6 @@
 			</tr>
 		</table>
 		<div class="buttonArea">
-			<button id="deleteButton" th:if="${destinations != null && destinations.size() > 0}">削除</button>
-			<form name="destinationForm" action="/lollipop/destination/">
-				<button type="submit" >新規宛先</button>
-			</form>
 			<button th:if="${destinations != null && destinations.size() > 0}" id="settlementButton">決済</button>
 		</div>
 	</div>

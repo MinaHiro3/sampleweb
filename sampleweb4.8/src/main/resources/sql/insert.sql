@@ -17,6 +17,8 @@ INSERT INTO mst_category (category_name,category_description)VALUES("10月開花
 INSERT INTO mst_category (category_name,category_description)VALUES("11月開花","11月開花の植物のカテゴリーです");
 INSERT INTO mst_category (category_name,category_description)VALUES("12月開花","12月開花の植物のカテゴリーです");
 
+INSERT INTO mst_destination (id, user_id, family_name, first_name, tel_number, address, status, created_at, updated_at) VALUES (NULL, '1', '山田', '太郎', '0312341234', '東京都千代田千代田区三番町1-1', '1', now(), now());
+
 INSERT INTO mst_product(product_name,product_name_kana,product_description,category_id,price,image_full_path,release_date,release_company) VALUES ("アベリア","あべりあ","花言葉：気品",1,550,"/img/jan/abelia.jpg","2020/01/15","城ノ越園芸");
 INSERT INTO mst_product(product_name,product_name_kana,product_description,category_id,price,image_full_path,release_date,release_company) VALUES ("キンセンカ","きんせんか","花言葉：輝かしい",1,350,"/img/jan/calendula.jpg","2020/01/15","城ノ越園芸");
 INSERT INTO mst_product(product_name,product_name_kana,product_description,category_id,price,image_full_path,release_date,release_company) VALUES ("シクラメン","しくらめん","花言葉：内気、遠慮",1,450,"/img/jan/cyclamen.jpg","2020/01/15","城ノ越園芸");

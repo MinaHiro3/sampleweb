@@ -68,29 +68,5 @@ public class AuthController {
 		return "";
 	}
 	
-	@RequestMapping("/resetPassword")
-	public String resetPassword(@RequestBody UserForm f) {
-		String message = "パスワードが再設定されました。";
-		String newPassword = f.getNewPassword();
-		String newPasswordConfirm = f.getNewPasswordConfirm();
-		
-		MstUser user = userMapper.findByUserNameAndPassword(f.getUserName(), f.getPassword());
-		if (user == null) {
-			return "現在のパスワードが正しくありません。";
-		}
-		
-		if (user.getPassword().equals(newPassword)) {
-			return "現在のパスワードと同一文字列が入力されました。";
-		}
-		
-		if (!newPassword.equals(newPasswordConfirm)) {
-			return "新パスワードと確認用パスワードが一致しません。";
-		}
-		// mst_userとloginSessionのパスワードを更新する
-		userMapper.updatePassword(user.getUserName(), f.getNewPassword());
-		loginSession.setPassword(f.getNewPassword());
-		
-		
-		return message;
-	}
+
 }
